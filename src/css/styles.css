@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .category {
+        @apply bg-white shadow-sm rounded-2xl flex items-center h-8 px-3 text-nowrap
+    }
+}

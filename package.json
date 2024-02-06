@@ -1,0 +1,15 @@
+{
+  "name": "google-map-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/css/styles.css -o ./dist/styles.css",
+    "build:watch": "npx tailwindcss -i ./src/css/styles.css -o ./dist/styles.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

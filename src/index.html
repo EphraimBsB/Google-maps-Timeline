@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google maps Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link rel="stylesheet" href="../dist/styles.css" />
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  </head>
+  <body class="font-sans antialiased">
+    <main class="flex w-full h-svh">
+      <aside class="h-full min-w-11 max-w-96 shadow-sm">
+        <div
+          class="h-full bg-white text-gray-500 w-[72px] shadow-2xl flex flex-col space-y-6"
+        >
+          <button class="mt-6">
+            <span class="material-symbols-outlined hidden lg:block">
+              menu
+            </span>
+          </button>
+          <button>
+            <span class="material-symbols-outlined"> bookmark </span>
+
+            <p class="text-[11px]/[16px] font-medium mt-2">Saved</p>
+          </button>
+          <button>
+            <span class="material-symbols-outlined"> history </span>
+            <p class="text-[11px]/[16px] font-medium mt-2">Recents</p>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Top Navbar -->
+      <section class="flex-1 relative">
+        <div
+          class="h-12 z-10 absolute inset-5 flex items-center justify-between flex-wrap"
+        >
+          <div class="flex-1 flex items-center flex-wrap gap-4">
+            <!-- Search bar -->
+            <div
+              class="bg-white text-gray-400 rounded-3xl shadow-sm w-[376px] h-12 flex space-x-3 items-center py-[11px] px-6"
+            >
+              <span class="material-symbols-outlined block lg:hidden">
+                menu
+              </span>
+              <input
+                type="text"
+                name="search"
+                id="search"
+                class="flex-1 placeholder:text-gray-400 outline-none"
+                placeholder="Search Google Maps"
+              />
+              <span class="material-symbols-outlined"> search </span>
+              <span class="material-symbols-outlined text-[#1a73e8]">
+                directions
+              </span>
+            </div>
+
+            <!-- Categories -->
+            <div
+              id="categories"
+              class="flex space-x-3 overflow-x-auto no-scrollbar max-w-[376px] lg:max-w-max"
+            ></div>
+          </div>
+
+          <!-- Apps Icon and Profile avatar -->
+          <div class="flex items-center space-x-3 self-start">
+            <span class="material-symbols-outlined text-gray-400 text-3xl">
+              apps
+            </span>
+            <div class="h-8 w-8 rounded-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4NDY1NDI0Ng&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
+                alt="User profile avatar"
+                class="object-cover"
+                width="32"
+                height="32"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Maps -->
+        <div id="map" class="bg-blue-200 h-full"></div>
+      </section>
+    </main>
+
+    <script>
+      ((g) => {
+        var h,
+          a,
+          k,
+          p = "The Google Maps JavaScript API",
+          c = "google",
+          l = "importLibrary",
+          q = "__ib__",
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement("script"));
+              e.set("libraries", [...r] + "");
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set("callback", c + ".maps." + q);
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + " could not load.")));
+              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+              m.head.append(a);
+            }));
+        d[l]
+          ? console.warn(p + " only loads once. Ignoring:", g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({ key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly" });
+    </script>
+    <script src="./js/index.js"></script>
+    <script src="./js/maps.js"></script>
+  </body>
+</html>
