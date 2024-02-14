@@ -1,0 +1,152 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gooogle Maps Timeline Clone</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="../dist/styles.css" />
+  </head>
+  <body>
+    <main class="flex w-full h-svh">
+      <section class="flex-1 relative bg-blue-200 font-sans antialiase">
+        <div class="flex justify-between">
+          <!--Time Line Box-->
+          <div
+            class="flex flex-col bg-white w-96 border-none rounded-2 shadow-md"
+          >
+            <!--Header-->
+            <div class="flex h-10 justify-between items-center pr-4 pl-2">
+              <div class="flex">
+                <img
+                  class="h-5"
+                  src="https://duet-cdn.vox-cdn.com/thumbor/0x0:1280x800/750x500/filters:focal(640x400:641x401):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/19700731/googlemaps.png"
+                  alt=""
+                />
+                <p class="text-[14px] font-bold text-gray-500 ml-1">Timeline</p>
+                <span
+                  class="material-symbols-outlined text-[13px] text-gray-400 mt-1 ml-2"
+                >
+                  lock
+                </span>
+              </div>
+              <p class="text-[11px] font-bold text-gray-500">TODAY</p>
+            </div>
+            <!--Date picker-->
+            <div class="bg-gray-200 h-10 flex items-center justify-between">
+              <div class="flex items-center px-4">
+                <p class="text-[11px] font-medium text-gray-500 mr-2">2023</p>
+                <span class="material-symbols-outlined text-sm">
+                  arrow_drop_down
+                </span>
+                <div
+                  class="border-l-2 border-solid border-gray-300 h-5 m-3"
+                ></div>
+                <!--Years-->
+
+                <p class="text-[11px] font-medium text-gray-500 mr-4">MONTH</p>
+                <span class="material-symbols-outlined text-sm">
+                  arrow_drop_down
+                </span>
+                <div
+                  class="border-l-2 border-solid border-gray-300 h-5 m-3"
+                ></div>
+                <!--Months-->
+
+                <p class="text-[11px] font-medium text-gray-500 mr-4">DAY</p>
+                <span class="material-symbols-outlined text-sm">
+                  arrow_drop_down
+                </span>
+                <!--Days-->
+              </div>
+              <div
+                class="bg-white h-full w-14 flex items-center justify-end pr-4 border-t border-solid border-gray-300"
+              >
+                <span class="material-symbols-outlined text-xl text-gray-400">
+                  finance
+                </span>
+              </div>
+            </div>
+
+            <!--Graph-->
+            <div
+              id="graphs"
+              class="flex flex-wrap-reverse space-x-1 h-20 px-1 py-3"
+            >
+              <!-- <img src="./assets//graph.png" alt="" /> -->
+            </div>
+          </div>
+
+          <!-- Apps Icon and Profile avatar -->
+          <div class="flex items-center space-x-3 self-start my-3 mx-5">
+            <span class="material-symbols-outlined text-gray-400 text-3xl">
+              apps
+            </span>
+            <div class="h-8 w-8 rounded-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4NDY1NDI0Ng&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
+                alt="User profile avatar"
+                class="object-cover"
+                width="32"
+                height="32"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!--Map Settings-->
+        <div
+          class="flex flex-col items-end w-64 absolute right-2 bottom-32 space-y-2"
+        >
+          <div class="flex flex-col space-y-3 bg-white w-7">
+            <span class="material-symbols-outlined text-gray-400"> add </span>
+            <span class="material-symbols-outlined text-gray-400">
+              remove
+            </span>
+          </div>
+          <div class="flex space-x-20">
+            <div class="flex space-x-3 w-16">
+              <span class="material-symbols-outlined text-2xl"> help </span>
+              <span class="material-symbols-outlined text-2xl"> settings </span>
+            </div>
+            <div class="flex items-center bg-white h-7 w-28 py-3 px-2">
+              <p class="text-[12px] font-medium text-gray-500">Map</p>
+              <div
+                class="border-l-2 border-solid border-gray-300 h-5 m-3"
+              ></div>
+              <p class="text-[12px] font-medium text-gray-500">Satelite</p>
+            </div>
+          </div>
+        </div>
+        <!--Bottom Trips-->
+
+        <div
+          id="trips"
+          class="flex bg-white h-32 w-full absolute bottom-0 items-center space-x-2"
+        >
+          <div
+            class="flex space-x-3 justify-start bg-blue-500 h-full w-40 p-3 shadow-2xl"
+          >
+            <span
+              class="material-symbols-outlined text-[16px] font-medium text-gray-300 mt-1"
+            >
+              arrow_back
+            </span>
+            <div class="flex flex-col">
+              <p class="text-[16px] font-medium text-white">2023</p>
+              <p class="text-[10px] font-medium text-gray-300">4 trips</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

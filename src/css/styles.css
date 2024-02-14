@@ -6,4 +6,26 @@
     .category {
         @apply bg-white shadow-sm rounded-2xl flex items-center h-8 px-3 text-nowrap
     }
+    .graph {
+        @apply w-5 bg-blue-300
+    }
+    .graph-frequency-high {
+        @apply bg-blue-500
+    }
+    .vertical {
+        @apply border-l-2 border-gray-300 h-14 ml-5 mr-14
+    }
+    .analysis-icon {
+        background-color: white;
+        height: 100%;
+        width: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-right: 15;
+        border-top: 1px;
+        border-style: solid;
+        border-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    }
+
 }
