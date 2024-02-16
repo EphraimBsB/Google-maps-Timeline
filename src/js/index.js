@@ -92,6 +92,75 @@ const TIMELINE_GRAPH = [
     },
 ];
 
+const STEPS = [
+    {
+        icon: "stop_circle",
+        street: "44 Rue de Versoix",
+        time: "6:24 PM",
+        road: "44 Rue de Versoix, 01210 Ferney Voltaire",
+        images: [
+            {
+                url: "https://hotel-de-france-ferney-voltaire.hotelmix.fr/data/Photos/r888x757w/4135/413555/413555181/Hotel-De-France-Ferney-Voltaire-Exterior.JPEG"
+            },
+            {
+                url: "https://hotel-de-france-ferney-voltaire.hotelmix.fr/data/Photos/r888x757w/4135/413555/413555181/Hotel-De-France-Ferney-Voltaire-Exterior.JPEG"
+            },
+            {
+                url: "https://hotel-de-france-ferney-voltaire.hotelmix.fr/data/Photos/r888x757w/4135/413555/413555181/Hotel-De-France-Ferney-Voltaire-Exterior.JPEG"
+            }
+        ],
+        transport: "Cycling",
+        meters: "700 km",
+        t_icon: "directions_bike",
+        t_time: "15 min"
+    },
+    {
+        icon: "stop_circle",
+        street: "44 Rue de Versoix",
+        time: "6:24 PM",
+        road: "44 Rue de Versoix, 01210 Ferney Voltaire",
+        images: [
+            {
+                url: "https://hotel-de-france-ferney-voltaire.hotelmix.fr/data/Photos/r888x757w/4135/413555/413555181/Hotel-De-France-Ferney-Voltaire-Exterior.JPEG"
+            },
+            {
+                url: "https://hotel-de-france-ferney-voltaire.hotelmix.fr/data/Photos/r888x757w/4135/413555/413555181/Hotel-De-France-Ferney-Voltaire-Exterior.JPEG"
+            },
+            {
+                url: "https://hotel-de-france-ferney-voltaire.hotelmix.fr/data/Photos/r888x757w/4135/413555/413555181/Hotel-De-France-Ferney-Voltaire-Exterior.JPEG"
+            }
+        ],
+        transport: "Cycling - 700 km",
+        t_icon: "directions_bike",
+        t_time: "15 min"
+    }
+];
+
+const handleSteps = () => {
+    const stepsDiv = document.querySelector("#steps");
+
+    STEPS.forEach((step) => {
+        const wrapperDiv = document.createElement('div');
+        const lineSeparatorDiv = document.createElement('div');
+        const streetBoxWrapperDiv = document.createElement('div');
+        const iconSpan = document.createElement('span');
+        const streetInfoWrapperDiv = document.createElement('div');
+        const streetInfoHeaderWDIv = document.createElement('div');
+        const dropdaownWDiv = document.createElement('div');
+        const streetPar = document.createElement('p');
+        
+        const timePar = document.createElement('p');
+        const roadPar = document.createElement('p');
+        const imagesDiv = document.createElement('div');
+        const image = document.createElement('img');
+        const transPar = document.createElement('p');
+        const t_iconSpan = document.createElement('span');
+        const t_timePar = document.createElement('p');
+
+        //Add sty
+    })
+}
+
 const handleCategories = () => {
     const categoriesDiv = document.querySelector("#categories");
 
